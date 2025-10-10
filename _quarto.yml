@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "WS 25/26 Numerik 0 Solutions"
+  author: "Norah Jones"
+  date: "10/10/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

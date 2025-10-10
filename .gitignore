@@ -1,0 +1,8 @@
+# Quarto outputs
+_site/
+.quarto/
+# Common cruft
+.DS_Store
+.Rproj.user/
+*.log
+.ipynb_checkpoints/
