@@ -1,0 +1,171 @@
+Here’s a ready-to-paste `README.md` tailored for your **num-sol-ws2526** repo.
+
+---
+
+# Numerics 0 – Solutions (WS25/26)
+
+Programming and written solutions for the Numerics 0 weekly sheets (Übungsblätter).
+Lightweight collaboration setup for a 2–3 person team, with optional PRs and a simple CI build.
+
+## Repository layout
+
+```
+num-sol-ws2526/
+├─ hdnum/               # submodule: Heidelberger Numerikbibliothek (header-only)
+├─ CMakeLists.txt       # top-level build (discovers src/ubN/*)
+├─ src/                 # programming assignments
+│  ├─ ub1/
+│  │  ├─ CMakeLists.txt
+│  │  └─ ub1_task1.cpp
+│  ├─ ub2/
+│  │  └─ CMakeLists.txt
+│  └─ ...
+├─ theory/              # written solutions (QMD sources, optional PDFs/scans)
+│  ├─ ub1/
+│  └─ ub2/
+└─ .github/workflows/build.yml   # CI: compile on push/PR
+```
+
+## Prerequisites
+
+* Git (with submodule support)
+* CMake ≥ 3.16
+* C++ compiler (g++/clang++)
+* Optional: GMP dev package (only if enabling high precision):
+
+  ```bash
+  sudo apt update && sudo apt install -y libgmp-dev
+  ```
+* Optional: Quarto CLI (only for rendering `.qmd` to PDF on your machine)
+
+## First-time clone (with submodule)
+
+```bash
+git clone --recurse-submodules https://github.com/igor-dimi/num-sol-ws2526.git
+cd num-sol-ws2526
+```
+
+If you already cloned without submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+## Build
+
+Configure once per build directory (or when changing options/CMake):
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+# add -DHDNUM_USE_GMP=ON if you installed libgmp-dev and want high precision
+```
+
+Build (repeat as you edit):
+
+```bash
+cmake --build build -j
+```
+
+Executables land under:
+
+```
+build/bin/ub1/..., build/bin/ub2/...
+```
+
+## Weekly structure
+
+* Programming sources for week N: `src/ubN/`
+* Written sources (QMD, optional PDFs/scans) for week N: `theory/ubN/`
+
+## Lightweight collaboration workflow
+
+* Main branch stays working (compiled locally before pushing).
+* Use per-week branches; PRs are optional.
+
+### Sync main
+
+```bash
+git checkout main
+git pull --ff-only
+git submodule update --init --recursive
+```
+
+### Create your branch for a week
+
+```bash
+git checkout -b ub1_igor
+# edit src/ub1/... and/or theory/ub1/...
+cmake --build build -j    # build locally before pushing
+git add -A
+git commit -m "ub1: implement task1; add notes"
+git push -u origin ub1_igor
+```
+
+### Merging
+
+* Small, low-risk changes: push/merge to `main` directly (or open a PR and self-merge).
+* If both touched the same files or a change is risky: open a PR and request a quick review.
+
+## Continuous Integration (CI)
+
+* GitHub Actions builds on every **push** to `main` and on **pull requests**.
+* CI does not block merges in this lightweight setup; it warns if `main` breaks.
+* Workflow: `.github/workflows/build.yml`
+
+  * Installs `cmake`, `g++`, `libgmp-dev`
+  * Configures and builds the repo
+
+## HDNUM submodule
+
+* The library is header-only; no linking needed unless enabling GMP.
+
+* To update the submodule to the recorded commit after pulling:
+
+  ```bash
+  git submodule update --init --recursive
+  ```
+
+* Do not modify files inside `hdnum/`. If you need changes, fork and repoint the submodule (not expected for this course).
+
+## Optional: GMP (high precision)
+
+Enable at configure time (persists in the build dir):
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DHDNUM_USE_GMP=ON
+cmake --build build -j
+```
+
+## Submission packaging (outside this repo)
+
+* Files are synced to a file-sharing root (Seafile) using a small `Makefile` from the course notes repo.
+* In the share, a separate script renders `.qmd` → `.pdf` (incremental) and zips all PDFs + sources as:
+
+```
+Heinrich_BlattNN_Dimitrov_Herzog_Chae.zip
+```
+
+(We keep rendering/zipping outside this repo to keep the Git history clean.)
+
+## .gitignore (suggested)
+
+```
+build/
+*.o
+*.a
+*.exe
+*.dat
+.DS_Store
+theory/**/*.pdf
+```
+
+## Conventions
+
+* Branch names: `ub<N>_<name>` (e.g., `ub3_igor`, `ub3_malte`)
+* Commit messages: concise and informative:
+
+  * `ub1: add RK4 step + plot`
+  * `ub2: fix Newton residual; add notes.qmd`
+* Keep code and write-ups for a week in their respective `ubN` folders.
+* Don’t commit large binaries or generated PDFs.
+

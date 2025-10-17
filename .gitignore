@@ -13,3 +13,6 @@ _book/
 
 # build folder
 build/
+
+# pdf files
+theory/**/*.pdf
