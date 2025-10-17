@@ -1,7 +1,3 @@
-Here’s a ready-to-paste `README.md` tailored for your **num-sol-ws2526** repo.
-
----
-
 # Numerics 0 – Solutions (WS25/26)
 
 Programming and written solutions for the Numerics 0 weekly sheets (Übungsblätter).
