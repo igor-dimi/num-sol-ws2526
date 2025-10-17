@@ -1,8 +1,15 @@
 # Quarto outputs
-_site/
 .quarto/
+_book/
 # Common cruft
 .DS_Store
 .Rproj.user/
-*.log
 .ipynb_checkpoints/
+
+# binary files
+*.o
+*.a
+*.log
+
+# build folder
+build/
