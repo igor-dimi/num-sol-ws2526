@@ -34,7 +34,10 @@ num-sol-ws2526/
   ```
 * Optional: Quarto CLI (only for rendering `.qmd` to PDF on your machine)
 
-## First-time clone (with submodule)
+
+## Getting Started (for teammates)
+
+### First-time clone (with submodule)
 
 ```bash
 git clone --recurse-submodules https://github.com/igor-dimi/num-sol-ws2526.git
@@ -47,7 +50,7 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-## Build
+### Configure & Build
 
 Configure once per build directory (or when changing options/CMake):
 
@@ -56,7 +59,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 # add -DHDNUM_USE_GMP=ON if you installed libgmp-dev and want high precision
 ```
 
-Build (repeat as you edit):
+Then build (repeat as you edit source files):
 
 ```bash
 cmake --build build -j
@@ -68,12 +71,12 @@ Executables land under:
 build/bin/ub1/..., build/bin/ub2/...
 ```
 
-## Weekly structure
+### Weekly structure
 
 * Programming sources for week N: `src/ubN/`
 * Written sources (QMD, optional PDFs/scans) for week N: `theory/ubN/`
 
-## Lightweight collaboration workflow
+### Lightweight collaboration workflow
 
 * Main branch stays working (compiled locally before pushing).
 * Use per-week branches; PRs are optional.
@@ -88,6 +91,8 @@ git submodule update --init --recursive
 
 ### Create your branch for a week
 
+Branch naming: `ub<Nr>_<yourname>` (e.g., `ub1_malte` or `ub2_igor`)
+
 ```bash
 git checkout -b ub1_igor
 # edit src/ub1/... and/or theory/ub1/...
@@ -95,6 +100,24 @@ cmake --build build -j    # build locally before pushing
 git add -A
 git commit -m "ub1: implement task1; add notes"
 git push -u origin ub1_igor
+```
+
+### Sync routinely
+
+Before starting new work or merging:
+
+```
+git checkout main
+git pull --ff-only
+git submodule update --init --recursive
+```
+
+and update your branch on top of the latest main (optional but tidy):
+
+```
+git checkout ub1_<yourname>
+git rebase origin/main
+# resolve any conflicts → git add <files> → git rebase --continue
 ```
 
 ### Merging
