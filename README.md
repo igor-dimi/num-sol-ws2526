@@ -153,8 +153,7 @@ git rebase origin/main
 Enable at configure time (persists in the build dir):
 
 ```bash
-# cd src/
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DHDNUM_USE_GMP=ON
+cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -DHDNUM_USE_GMP=ON
 cmake --build build -j
 ```
 
