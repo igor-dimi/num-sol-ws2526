@@ -57,8 +57,7 @@ git submodule update --init --recursive
 Configure once per build directory (or when changing options/CMake):
 
 ```bash
-cd src/
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
 # add -DHDNUM_USE_GMP=ON if you installed libgmp-dev and want high precision
 ```
 
@@ -99,7 +98,6 @@ Branch naming: `ub<Nr>_<yourname>` (e.g., `ub1_malte` or `ub2_igor`)
 ```bash
 git checkout -b ub1_igor
 # edit src/ub1/... and/or theory/ub1/...
-cd src/
 cmake --build build -j    # build locally before pushing
 git add -A
 git commit -m "ub1: implement task1; add notes"
