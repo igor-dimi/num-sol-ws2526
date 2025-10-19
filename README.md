@@ -11,7 +11,7 @@ num-sol-ws2526/
 ├─ src/                           # CMake "top-level" lives here
 │  ├─ CMakeLists.txt              # builds all ubN targets
 │  ├─ ub1/
-│  │  ├─ CMakeLists.txt
+│  │  ├─ CMakeLists.txt           # defines ub targets
 │  │  └─ ub1_task1.cpp
 │  ├─ ub2/
 │  │  └─ CMakeLists.txt
