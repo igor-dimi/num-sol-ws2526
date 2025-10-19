@@ -12,7 +12,7 @@ _book/
 *.log
 
 # build folder
-build/
+build*/
 
 # pdf files
 theory/**/*.pdf

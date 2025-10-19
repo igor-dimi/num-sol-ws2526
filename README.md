@@ -7,20 +7,22 @@ Lightweight collaboration setup for a 2–3 person team, with optional PRs and a
 
 ```
 num-sol-ws2526/
-├─ hdnum/                         # submodule
-├─ src/                           # CMake "top-level" lives here
-│  ├─ CMakeLists.txt              # builds all ubN targets
+├─ CMakeLists.txt                  # tiny forwarder: just add_subdirectory(src)
+├─ hdnum/                          # submodule (header-only HDNUM library)
+├─ src/                            # build root for all programming exercises
+│  ├─ CMakeLists.txt               # real top-level: sets hdnum include, adds all ubN subdirs
 │  ├─ ub1/
-│  │  ├─ CMakeLists.txt           # defines ub targets
+│  │  ├─ CMakeLists.txt            # defines ub1 targets (e.g., ub1_task1), sets bin dir to build/bin/ub1
 │  │  └─ ub1_task1.cpp
 │  ├─ ub2/
-│  │  └─ CMakeLists.txt
+│  │  ├─ CMakeLists.txt            # same pattern for week 2 (easy place to add per-UB flags)
+│  │  └─ ub2_task1.cpp
 │  └─ ...
 ├─ theory/
 │  ├─ ub1/
 │  └─ ub2/
 ├─ .github/workflows/
-│  └─ build.yml                   # CI (set working-directory: src)
+│  └─ build.yml                    # CI: configure with -S . (root) now that we have a forwarder
 └─ .gitignore
 ```
 
@@ -57,7 +59,7 @@ git submodule update --init --recursive
 Configure once per build directory (or when changing options/CMake):
 
 ```bash
-cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 # add -DHDNUM_USE_GMP=ON if you installed libgmp-dev and want high precision
 ```
 
@@ -153,7 +155,7 @@ git rebase origin/main
 Enable at configure time (persists in the build dir):
 
 ```bash
-cmake -S src -B build -DCMAKE_BUILD_TYPE=Release -DHDNUM_USE_GMP=ON
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DHDNUM_USE_GMP=ON
 cmake --build build -j
 ```
 
