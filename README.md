@@ -7,19 +7,21 @@ Lightweight collaboration setup for a 2–3 person team, with optional PRs and a
 
 ```
 num-sol-ws2526/
-├─ hdnum/               # submodule: Heidelberger Numerikbibliothek (header-only)
-├─ CMakeLists.txt       # top-level build (discovers src/ubN/*)
-├─ src/                 # programming assignments
+├─ hdnum/                         # submodule
+├─ src/                           # CMake "top-level" lives here
+│  ├─ CMakeLists.txt              # builds all ubN targets
 │  ├─ ub1/
 │  │  ├─ CMakeLists.txt
 │  │  └─ ub1_task1.cpp
 │  ├─ ub2/
 │  │  └─ CMakeLists.txt
 │  └─ ...
-├─ theory/              # written solutions (QMD sources, optional PDFs/scans)
+├─ theory/
 │  ├─ ub1/
 │  └─ ub2/
-└─ .github/workflows/build.yml   # CI: compile on push/PR
+├─ .github/workflows/
+│  └─ build.yml                   # CI (set working-directory: src)
+└─ .gitignore
 ```
 
 ## Prerequisites
