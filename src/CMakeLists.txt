@@ -25,7 +25,7 @@ if(HDNUM_USE_GMP)
 endif()
 
 # Add each UB subdir in src/ if it has a CMakeLists.txt
-foreach(ub IN ITEMS ub01 ub02 ub03 ub04 ub05 ub06 ub07 ub08 ub9 ub10)
+foreach(ub IN ITEMS ub00 ub01 ub02 ub03 ub04 ub05 ub06 ub07 ub08 ub9 ub10)
   if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/${ub}/CMakeLists.txt")
     add_subdirectory("${ub}")
   endif()

@@ -42,4 +42,5 @@ int main() {
   std::cout << "<v,w> = " << dot << "\n";
 
   return 0;
+  // there are some comments
 }
