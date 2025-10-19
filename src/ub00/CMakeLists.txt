@@ -15,3 +15,4 @@ endfunction()
 
 # List ub1 binaries here:
 add_ub_example(ub0_task1)
+add_ub_example(minimal_hdnum)
