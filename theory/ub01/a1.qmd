@@ -1,3 +1,10 @@
 ## uebung 1 
 
-Some stuff comes here. 
+a) 
+
+\begin{align*}
+[0.5731E5]_8 &= (5 \times 8^{-1} + 7 \times 8^{-2} + 3 \times 8^{-3} + 1 \times 8^{-4}) \times 8^5 \\
+             &= 20480 + 3584 + 192 + 8 \\
+             &= 24264 \\
+             &= [0.24264E5]_{10} \in \mathbb{F}(10, 5, 1) 
+\end{align*}

@@ -16,3 +16,5 @@ build*/
 
 # pdf files
 theory/**/*.pdf
+
+/.quarto/
