@@ -20,11 +20,11 @@ b)
 
 \begin{align*}
 &0.3 \times 2 = 0.6 &&m_1 = 0 \\
-&0.6 \times 2 = l.2 &&m_2 = 1 \\
+&0.6 \times 2 = 1.2 &&m_2 = 1 \\
 &0.2 \times 2 = 0.4 &&m_3 = 0 \\
 &0.4 \times 2 = 0.8 &&m_4 = 0 \\
 &0.8 \times 2 = 1.6 &&m_5 = 1 \\
-&0.6 \times 2 = 1.2 &&m_6 = 0 \\
+&0.6 \times 2 = 1.2 &&m_6 = 1 \tag{pattern repeats} \\
 &\ldots
 \end{align*}
 
