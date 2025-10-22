@@ -1,4 +1,11 @@
-## uebung 1 
+```
+- Dimitrov
+- Herzog
+- 
+```
+
+
+## Aufgabe 1
 
 a) 
 
@@ -23,6 +30,7 @@ b)
 
 Somit:
 
+**boldface**
 
 <!-- \begin{align*}
 0.3 &= [0.0100110011001\ldots]_2 \\
@@ -51,4 +59,5 @@ Es gilt:
 &r=4\quad &&0.\underline{2998}046875  = 0.2998 \neq\ 0.3
 \end{align*}
 
-D.h machst sich der Fehler erst ab r = 4 bemerkbar
+D.h macht sich der Fehler erst ab r = 4 bemerkbar
+
