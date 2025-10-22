@@ -1,3 +1,60 @@
-## uebung 1 
+```
+- Dimitrov
+- Herzog
+- Stumm
+```
 
-Some stuff comes here. 
+
+## Aufgabe 1
+
+a) 
+
+\begin{align*}
+[0.5731E5]_8 &= (5 \times 8^{-1} + 7 \times 8^{-2} + 3 \times 8^{-3} + 1 \times 8^{-4}) \times 8^5 \\
+             &= 20480 + 3584 + 192 + 8 \\
+             &= 24264 \\
+             &= [0.24264E5]_{10} \in \mathbb{F}(10, 5, 1) 
+\end{align*}
+
+b) 
+
+\begin{align*}
+&0.3 \times 2 = 0.6 &&m_1 = 0 \\
+&0.6 \times 2 = 1.2 &&m_2 = 1 \\
+&0.2 \times 2 = 0.4 &&m_3 = 0 \\
+&0.4 \times 2 = 0.8 &&m_4 = 0 \\
+&0.8 \times 2 = 1.6 &&m_5 = 1 \\
+&0.6 \times 2 = 1.2 &&m_6 = 1 \tag{pattern repeats} \\
+&\ldots
+\end{align*}
+
+Somit:
+
+
+<!-- \begin{align*}
+0.3 &= [0.0100110011001\ldots]_2 \\
+    &= [0.100110011001E^{-1}]_2 \\
+    &= [0.10011001100E^{-1}]_2 \tag*{\text{Abrunden } r=11}
+\end{align*} -->
+
+
+\begin{align*}
+0.3 &= [0.0100110011001\ldots]_2 \\
+    &= [0.100110011001\ldots E-1]_2 \\
+    &= [0.10011001100E-1]_2 \tag{abrunden r = 11} \\
+    &\in \mathbb{F}(2, 11, 2)
+\end{align*}
+
+$[0.10011001100E-1]_2 = 0.2998046875\ldots$
+
+Es gilt:
+
+\begin{align*}
+&r=1\quad &&0.\underline{2}998046875  = 0.3   = 0.3\\
+&r=2\quad &&0.\underline{29}98046875  = 0.30  = 0.3\\
+&r=3\quad &&0.\underline{299}8046875  = 0.300 = 0.3\\
+&r=4\quad &&0.\underline{2998}046875  = 0.2998 \neq\ 0.3
+\end{align*}
+
+D.h der Fehler erst ab r = 4 bemerkbar
+

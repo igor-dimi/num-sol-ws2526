@@ -9,9 +9,9 @@ book:
   date: "10/10/2025"
   chapters:
     - index.qmd
-    - ub1/ub1.qmd
+    - theory/ub01/a1.qmd
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:
