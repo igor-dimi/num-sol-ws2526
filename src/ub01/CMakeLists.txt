@@ -14,4 +14,5 @@ function(add_ub_example name)
 endfunction()
 
 # List ub1 binaries here:
+add_ub_example(ub3)
 # add_ub_example(ub1_task1)
