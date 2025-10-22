@@ -2,12 +2,9 @@
 #include <limits>
 #include <iomanip>
 
-bool is_too_small_float(float x) {
-    return float(1) + x == float(1);
-}
-
-bool is_too_small_double(double x) {
-    return double(1) + x == double(1);
+template <typename T>
+bool is_too_small(T x){
+    return T(1) + x == T(1);
 }
 
 // template <typename T>
@@ -38,16 +35,16 @@ int main() {
         std::cout << "enter a number:" << std::endl;
         std::cin >> x;
         xf = static_cast<float>(x);
-        if (is_too_small_float(xf)) {
-            std::cout << "x is too small, i.e., 1 + x == 1" << std::endl;
-        } else std::cout << "x is large enough, i.e. 1 + x != 1" << std::endl;
+        if (is_too_small<float>(xf)) {
+            std::cout << x << " is too small, i.e., 1 + x == 1" << std::endl;
+        } else std::cout << x << " is large enough, i.e. 1 + x != 1" << std::endl;
         break;
     case 2:
         std::cout << "enter a number:" << std::endl;
         std::cin >> x;
-        if (is_too_small_double(x)) {
-            std::cout << "x is too small, i.e., 1 + x == 1" << std::endl;
-        } else std::cout << "x is large enough, i.e. 1 + x != 1" << std::endl;
+        if (is_too_small<double>(x)) {
+            std::cout << x << " is too small, i.e., 1 + x == 1" << std::endl;
+        } else std::cout << x << " is large enough, i.e. 1 + x != 1" << std::endl;
         break;
     
     default:
