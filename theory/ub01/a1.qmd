@@ -1,7 +1,7 @@
 ```
 - Dimitrov
 - Herzog
-- 
+- Stumm
 ```
 
 
@@ -20,11 +20,11 @@ b)
 
 \begin{align*}
 &0.3 \times 2 = 0.6 &&m_1 = 0 \\
-&0.6 \times 2 = l.2 &&m_1 = 1 \\
-&0.2 \times 2 = 0.4 &&m_1 = 0 \\
-&0.4 \times 2 = 0.8 &&m_1 = 0 \\
-&0.8 \times 2 = 1.6 &&m_1 = 1 \\
-&0.6 \times 2 = 1.2 &&m_1 = 0 \\
+&0.6 \times 2 = l.2 &&m_2 = 1 \\
+&0.2 \times 2 = 0.4 &&m_3 = 0 \\
+&0.4 \times 2 = 0.8 &&m_4 = 0 \\
+&0.8 \times 2 = 1.6 &&m_5 = 1 \\
+&0.6 \times 2 = 1.2 &&m_6 = 0 \\
 &\ldots
 \end{align*}
 
@@ -56,42 +56,5 @@ Es gilt:
 &r=4\quad &&0.\underline{2998}046875  = 0.2998 \neq\ 0.3
 \end{align*}
 
-D.h macht sich der Fehler erst ab r = 4 bemerkbar
+D.h der Fehler erst ab r = 4 bemerkbar
 
-## Aufgabe 3
-
-b) Allgemein gilt:
-
-$$\frac{|x \circledast y| - x * y}{|x * y|} \leq \frac{1}{2}\beta^{1 - r}$$
-
-Für $1 \oplus x$, und $\beta = 2$:
-
-<!-- \begin{align*}
-\frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
-                                       &= \frac{|x|}{|1 + x|} \\
-                                       &= \frac{1}{2}\beta^{1 - r} \\
-                                       &= 2^{-r} \tag{\beta = 2} \\
-                            \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
-\end{align*} -->
-
-
-
-\begin{align*}
-\frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
-                                       &= \frac{|x|}{|1 + x|} \\
-                                       &= \frac{1}{2}\beta^{1 - r} \\
-                                       &= 2^{-r} \tag{$\beta = 2$} \\
-                            \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
-\end{align*}
-
-da $2^{-r} \ll 1$, kann annaehrend $x \leq 2^{-r}$ als Abschaetzung genommen werden. Dann
-
-
-* Fuer double-precision: $r = 53$ $\Rightarrow x \leq 2^{-53} \approx 1.1102230246251565e-16$ gilt $1 + x = x$
-* Fuer single-precision: $r = 24$ $\Rightarrow x \leq 2^{-24} \approx 5.960464477539063e-8$ gilt $1 + x = x$
-
-c) Nein, das sind nicht die kleinsten darstellbaren Zahlen, sondern die Zahlen, bei denen die Abschaetzung des Relativen
-   Fehlers erhalten bleibt. Die kleinsten (normalen) Zahlen erhaelt man dadurch, dass man die Exponenten auf den Kleinsten werden setzt:
-
-   * single precision: $2^{-126} = 1.17549435 × 10^{-38}$
-   * double precision: $2^{-1022} = 2.2250738585072014 × 10^{-308}$
