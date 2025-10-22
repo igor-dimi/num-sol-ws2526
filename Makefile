@@ -37,7 +37,6 @@ copy_theory: ensure_share_dir
 	    --include='*.qmd' \
 	    --include='*.png' \
 	    --include='*.jpg' \
-	    --include='*.txt' \
 	    --include='*.dat' \
 	    --include='imgs/***' \
 	    --exclude='*' \
