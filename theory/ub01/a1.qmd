@@ -1,7 +1,7 @@
 ```
-- Dimitrov
-- Herzog
-- Stumm
+- Igor Dimitrov
+- Malte Herzog
+- Raphael Stumm
 ```
 
 
