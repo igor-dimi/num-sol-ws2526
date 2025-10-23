@@ -2,33 +2,33 @@
 
 b) Allgemein gilt:
 
-$$\frac{|x \circledast y| - x * y}{|x * y|} \leq \frac{1}{2}\beta^{1 - r}$$
-
-Für $1 \oplus x$, und $\beta = 2$:
-
-<!-- \begin{align*}
-\frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
-                                       &= \frac{|x|}{|1 + x|} \\
-                                       &= \frac{1}{2}\beta^{1 - r} \\
-                                       &= 2^{-r} \tag{\beta = 2} \\
-                            \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
-\end{align*} -->
-
-
-
-\begin{align*}
-\frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
-                                       &= \frac{|x|}{|1 + x|} \\
-                                       &= \frac{1}{2}\beta^{1 - r} \\
-                                       &= 2^{-r} \tag{$\beta = 2$} \\
-                            \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
-\end{align*}
-
-da $2^{-r} \ll 1$, kann annährend $x \leq 2^{-r}$ als Abschätzung genommen werden. Dann
-
-
-* Für double-precision: $r = 53$ $\Rightarrow x \leq 2^{-53} \approx 1.1102230246251565e-16$ gilt $1 + x = 1$
-* Für single-precision: $r = 24$ $\Rightarrow x \leq 2^{-24} \approx 5.960464477539063e-8$ gilt $1 + x = 1$
+   $$\frac{|x \circledast y - x * y|}{|x * y|} \leq \frac{1}{2}\beta^{1 - r}$$
+   
+   Für $1 \oplus x$, und $\beta = 2$:
+   
+   <!-- \begin{align*}
+   \frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
+                                          &= \frac{|x|}{|1 + x|} \\
+                                          &= \frac{1}{2}\beta^{1 - r} \\
+                                          &= 2^{-r} \tag{\beta = 2} \\
+                               \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
+   \end{align*} -->
+   
+   
+   
+   \begin{align*}
+   \frac{|1 \oplus x - (1 + x)|}{|1 + x|} &= \frac{|1 - 1 - x|}{|1 + x} \\
+                                          &= \frac{|x|}{|1 + x|} \\
+                                          &= \frac{1}{2}\beta^{1 - r} \\
+                                          &= 2^{-r} \tag{$\beta = 2$} \\
+                               \iff \quad x &\leq \frac{2^{-r}}{1 - 2^{-r}}
+   \end{align*}
+   
+   da $2^{-r} \ll 1$, kann annährend $x \leq 2^{-r}$ als Abschätzung genommen werden. Dann
+   
+   
+   * Für double-precision: $r = 53$ $\Rightarrow x \leq 2^{-53} \approx 1.1102230246251565e-16$ gilt $1 + x = 1$
+   * Für single-precision: $r = 24$ $\Rightarrow x \leq 2^{-24} \approx 5.960464477539063e-8$ gilt $1 + x = 1$
 
 c) Nein, das sind nicht die kleinsten darstellbaren Zahlen, sondern die Zahlen, bei denen die Abschätzung des relativen
    Fehlers erhalten bleibt. Die kleinsten (normalen) Zahlen erhält man dadurch, dass man die Exponenten auf die kleinsten Werte setzt:
