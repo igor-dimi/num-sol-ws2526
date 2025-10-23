@@ -10,6 +10,7 @@ book:
   chapters:
     - index.qmd
     - theory/ub01/a1.qmd
+    - theory/ub01/a3.qmd
 
 # bibliography: references.bib
 
