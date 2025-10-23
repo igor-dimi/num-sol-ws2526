@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Igor Dimitrov">
-<meta name="author" content="Malte Herzog">
-<meta name="dcterms.date" content="2025-10-10">
 
-<title>WS 25/26 Numerik 0 Loesungen</title>
+<title>1&nbsp; Aufgabe 1 – WS 25/26 Numerik 0 Loesungen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./theory/ub01/a1.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d558773541b75318fdba2db46f940219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../theory/ub01/a3.html" rel="next">
+<link href="../../index.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d558773541b75318fdba2db46f940219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../theory/ub01/a1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aufgabe 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -99,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">WS 25/26 Numerik 0 Loesungen</a> 
+      <a href="../../">WS 25/26 Numerik 0 Loesungen</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -111,19 +138,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/ub01/a1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../theory/ub01/a1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aufgabe 1</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./theory/ub01/a3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../theory/ub01/a3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Aufgabe 3</span></span></a>
   </div>
 </li>
@@ -132,41 +159,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WS 25/26 Numerik 0 Loesungen</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aufgabe 1</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Igor Dimitrov </p>
-             <p>Malte Herzog </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -176,12 +184,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>WS 25/26 Numerics 0 Solutions</p>
+<pre><code>- Igor Dimitrov
+- Malte Herzog
+- Raphael Stumm</code></pre>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+[0.5731E5]_8 &amp;= (5 \times 8^{-1} + 7 \times 8^{-2} + 3 \times 8^{-3} + 1 \times 8^{-4}) \times 8^5 \\
+             &amp;= 20480 + 3584 + 192 + 8 \\
+             &amp;= 24264 \\
+             &amp;= [0.24264E5]_{10} \in \mathbb{F}(10, 5, 1)
+\end{align*}\]</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+&amp;0.3 \times 2 = 0.6 &amp;&amp;m_1 = 0 \\
+&amp;0.6 \times 2 = 1.2 &amp;&amp;m_2 = 1 \\
+&amp;0.2 \times 2 = 0.4 &amp;&amp;m_3 = 0 \\
+&amp;0.4 \times 2 = 0.8 &amp;&amp;m_4 = 0 \\
+&amp;0.8 \times 2 = 1.6 &amp;&amp;m_5 = 1 \\
+&amp;0.6 \times 2 = 1.2 &amp;&amp;m_6 = 1 \tag{pattern repeats} \\
+&amp;\ldots
+\end{align*}\]</span></p>
+<p>Somit:</p>
+<!-- \begin{align*}
+0.3 &= [0.0100110011001\ldots]_2 \\
+    &= [0.100110011001E^{-1}]_2 \\
+    &= [0.10011001100E^{-1}]_2 \tag*{\text{Abrunden } r=11}
+\end{align*} -->
+<p><span class="math display">\[\begin{align*}
+0.3 &amp;= [0.0100110011001\ldots]_2 \\
+    &amp;= [0.100110011001\ldots E-1]_2 \\
+    &amp;= [0.10011001100E-1]_2 \tag{abrunden r = 11} \\
+    &amp;\in \mathbb{F}(2, 11, 2)
+\end{align*}\]</span></p>
+<p><span class="math inline">\([0.10011001100E-1]_2 = 0.2998046875\ldots\)</span></p>
+<p>Es gilt:</p>
+<p><span class="math display">\[\begin{align*}
+&amp;r=1\quad &amp;&amp;0.\underline{2}998046875  = 0.3   = 0.3\\
+&amp;r=2\quad &amp;&amp;0.\underline{29}98046875  = 0.30  = 0.3\\
+&amp;r=3\quad &amp;&amp;0.\underline{299}8046875  = 0.300 = 0.3\\
+&amp;r=4\quad &amp;&amp;0.\underline{2998}046875  = 0.2998 \neq\ 0.3
+\end{align*}\]</span></p>
+<p>D.h der Fehler erst ab r = 4 bemerkbar</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -585,10 +634,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./theory/ub01/a1.html" class="pagination-link" aria-label="Aufgabe 1">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Aufgabe 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../theory/ub01/a3.html" class="pagination-link" aria-label="Aufgabe 3">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Aufgabe 3</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

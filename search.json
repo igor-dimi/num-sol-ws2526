@@ -2,41 +2,31 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "WS 25/26 Numerik 0 Solutions",
+    "title": "WS 25/26 Numerik 0 Loesungen",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Preface\nWS 25/26 Numerics 0 Solutions",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "theory/ub01/a1.html",
+    "href": "theory/ub01/a1.html",
+    "title": "1  Aufgabe 1",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "- Igor Dimitrov\n- Malte Herzog\n- Raphael Stumm\n\n\n\n\\[\\begin{align*}\n[0.5731E5]_8 &= (5 \\times 8^{-1} + 7 \\times 8^{-2} + 3 \\times 8^{-3} + 1 \\times 8^{-4}) \\times 8^5 \\\\\n             &= 20480 + 3584 + 192 + 8 \\\\\n             &= 24264 \\\\\n             &= [0.24264E5]_{10} \\in \\mathbb{F}(10, 5, 1)\n\\end{align*}\\]\n\n\n\n\\[\\begin{align*}\n&0.3 \\times 2 = 0.6 &&m_1 = 0 \\\\\n&0.6 \\times 2 = 1.2 &&m_2 = 1 \\\\\n&0.2 \\times 2 = 0.4 &&m_3 = 0 \\\\\n&0.4 \\times 2 = 0.8 &&m_4 = 0 \\\\\n&0.8 \\times 2 = 1.6 &&m_5 = 1 \\\\\n&0.6 \\times 2 = 1.2 &&m_6 = 1 \\tag{pattern repeats} \\\\\n&\\ldots\n\\end{align*}\\]\nSomit:\n\n\\[\\begin{align*}\n0.3 &= [0.0100110011001\\ldots]_2 \\\\\n    &= [0.100110011001\\ldots E-1]_2 \\\\\n    &= [0.10011001100E-1]_2 \\tag{abrunden r = 11} \\\\\n    &\\in \\mathbb{F}(2, 11, 2)\n\\end{align*}\\]\n\\([0.10011001100E-1]_2 = 0.2998046875\\ldots\\)\nEs gilt:\n\\[\\begin{align*}\n&r=1\\quad &&0.\\underline{2}998046875  = 0.3   = 0.3\\\\\n&r=2\\quad &&0.\\underline{29}98046875  = 0.30  = 0.3\\\\\n&r=3\\quad &&0.\\underline{299}8046875  = 0.300 = 0.3\\\\\n&r=4\\quad &&0.\\underline{2998}046875  = 0.2998 \\neq\\ 0.3\n\\end{align*}\\]\nD.h der Fehler erst ab r = 4 bemerkbar",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Aufgabe 1</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "theory/ub01/a3.html",
+    "href": "theory/ub01/a3.html",
+    "title": "2  Aufgabe 3",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "text": "Allgemein gilt:\n\\[\\frac{|x \\circledast y - x * y|}{|x * y|} \\leq \\frac{1}{2}\\beta^{1 - r}\\]\nFür \\(1 \\oplus x\\), und \\(\\beta = 2\\):\n\n\\[\\begin{align*}\n\\frac{|1 \\oplus x - (1 + x)|}{|1 + x|} &= \\frac{|1 - 1 - x|}{|1 + x} \\\\\n                                       &= \\frac{|x|}{|1 + x|} \\\\\n                                       &= \\frac{1}{2}\\beta^{1 - r} \\\\\n                                       &= 2^{-r} \\tag{$\\beta = 2$} \\\\\n                            \\iff \\quad x &\\leq \\frac{2^{-r}}{1 - 2^{-r}}\n\\end{align*}\\]\nda \\(2^{-r} \\ll 1\\), kann annährend \\(x \\leq 2^{-r}\\) als Abschätzung genommen werden. Dann\n\nFür double-precision: \\(r = 53\\) \\(\\Rightarrow x \\leq 2^{-53} \\approx 1.1102230246251565e-16\\) gilt \\(1 + x = 1\\)\nFür single-precision: \\(r = 24\\) \\(\\Rightarrow x \\leq 2^{-24} \\approx 5.960464477539063e-8\\) gilt \\(1 + x = 1\\)\n\nNein, das sind nicht die kleinsten darstellbaren Zahlen, sondern die Zahlen, bei denen die Abschätzung des relativen Fehlers erhalten bleibt. Die kleinsten (normalen) Zahlen erhält man dadurch, dass man die Exponenten auf die kleinsten Werte setzt:\n\nsingle precision: \\(2^{-126} = 1.17549435 × 10^{-38}\\)\ndouble precision: \\(2^{-1022} = 2.2250738585072014 × 10^{-308}\\)",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Aufgabe 3</span>"
     ]
   }
 ]
