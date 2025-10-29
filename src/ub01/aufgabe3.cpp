@@ -3,7 +3,7 @@
 
 template <typename T>
 bool a() {
-    T x;
+    T😂 x;
     std::cout << "Bitte geben Sie eine Zahl ein: ";
     std::cin >> x;
 
