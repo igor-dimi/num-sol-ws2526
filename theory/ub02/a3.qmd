@@ -1,0 +1,73 @@
+## Uebung 2
+ 
+ Die zwei Loesungen der Gleichung $x^2 - 2px + 1 = 0$ mittels quadratischer Formel:
+
+\begin{align}
+F(p) &:= \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \\
+     &= \begin{pmatrix} p + \sqrt{p^2 - 1} \\ p - \sqrt{p^2 - 1} \end{pmatrix}
+\end{align}
+
+Dann lauten die Konditionzahlen:
+
+\begin{align*}
+
+k_{1p} &= \frac{dF_1}{dp}\frac{p}{F_1} \\
+       &= \frac{dF_1}{dp} \cdot \frac{p}{p + \sqrt{p^2 - 1}} \\
+       &= \bigl( 1 + \frac{p}{\sqrt{p^2 - 1}}\bigr) \cdot \frac{p}{p + \sqrt{p^2 - 1}} \\
+       \Rightarrow k_{2p} &= \bigl( 1 - \frac{p}{\sqrt{p^2 - 1}}\bigr) \cdot \frac{p}{p - \sqrt{p^2 - 1}} \tag{analog}
+
+\end{align*}
+
+Die Loesungen sind definiert fuer
+
+\begin{align}
+& p^2 - 1 \geq 0 \\
+\iff &p \leq -1 \lor p \geq 1
+\end{align}
+
+
+Fuer das zweite parametrische Problem setzen wir zuerst $\ T(t) := \frac{t^2 + 1}{t}$. Dann kann die Gleichung als:
+
+$$x^2 - T(t)x + 1 = 0$$
+
+umgeschrieben werden. Die Loesungen der Gleichung sind dann:
+
+
+\begin{align}
+\tilde{F}(t) &:= \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \\
+     &= \begin{pmatrix} \frac{T + \sqrt{T^2 - 4}}{2} \\  \frac{T - \sqrt{T^2 - 4}}{2}\end{pmatrix}
+\end{align}
+
+und 
+
+$$\frac{dT}{dt} = 1 - \frac{1}{t^2}$$
+
+Dann gilt fuer die Konditionszahlen:
+
+\begin{align*}
+
+k_{1t} &= \frac{d\tilde{F_1}}{dt} \cdot \frac{t}{F_1} \\
+       &= \frac{1}{2}\bigl( 1\cdot \frac{dT}{dt} + \frac{1}{2\sqrt{T^2 - 4}}\cdot 2T \cdot \frac{dT}{dt} \bigr)\cdot \frac{t}{\tilde{F_1}} \tag{Kettenregel} \\
+       &= \bigl( 1 + \frac{1}{\sqrt{T^2 - 4}} \cdot T\bigr)\bigl( 1 - \frac{1}{t^2}\bigr)\cdot \frac{t}{T + \sqrt{T^2 - 4}} \\
+\Rightarrow k_{2t} &= \bigl( 1 - \frac{1}{\sqrt{T^2 - 4}} \cdot T\bigr)\bigl( 1 - \frac{1}{t^2}\bigr)\cdot \frac{t}{T - \sqrt{T^2 - 4}} \tag{Analog}
+
+\end{align*}
+
+
+Erstes Problem:
+
+* $k_{1p}$ schlecht konditioniert, gdw $p^2 \approx 1$ ,d.h $\ p \approx 1 \lor p \approx -1$
+* $k_{2p}$ schlecht kondiitioniert, gdw $p^2 \approx 1$ oder $p^2 \gg 1$, d.h $p \gg 1 \lor p \ll -1$
+
+Zweites Problem:
+
+* $k_{1t}$ schlecht konditioniert, gdw $T^2 \approx 4$. Diese Bedingung ist aequivalent zu:
+
+\begin{align*}
+T^2 &\approx 4 \\
+&\iff \frac{t^2 + 1}{t} \approx \pm 2 \\
+&\iff t^2 \pm 2t + 1 \approx 0 \\
+&\iff t \approx 1 \lor t \approx -1  
+\end{align*}
+
+* $k_{2t}$ ist schlecht konditioniert, gdw $T^2 \approx 4$, oder $T^2 \gg 4$, d.h. $T \gg 2$, oder $T \ll -2$. Es ist leicht zu sehen, dass die letzten zwei Bedingungen sind aequivalent zu: $\ t \gg 2$ oder $\ t\ll -2$
