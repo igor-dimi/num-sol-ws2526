@@ -11,7 +11,7 @@ book:
     - index.qmd
     - theory/ub01/a1.qmd
     - theory/ub01/a3.qmd
-    - theory/ub02/a3.qmd
+    - theory/ub03/a2.qmd
 
 # bibliography: references.bib
 

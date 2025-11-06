@@ -1,0 +1,55 @@
+## Uebung 2
+
+a) 
+
+\begin{align*}
+k_x &= \frac{df}{dx}\cdot\frac{x}{f} \\
+    &= \frac{d}{dx}\frac{1 - \cos{x}}{x}\cdot \frac{x^2}{1 - \cos{x}} \\
+    &= \frac{\sin{x}\cdot x - (1 - \cos{x})}{x^2}\cdot \frac{x^2}{1 - \cos{x}} \\
+    &= \frac{x\cdot \sin{x}}{(1 - \cos{x})} - 1
+\end{align*}
+
+Fuer kleine $x = h \approx 0$ gilt:
+
+\begin{align*}
+\sin{h} &\approx h \\
+1 - \cos{h} &\approx 1 - \bigl( 1 - \frac{h^2}{2}\bigr) \\
+            &= \frac{h^2}{2}
+\end{align*}
+
+Somit $\frac{h\sin{h}}{1 - \cos{h}} \approx \frac{h^2}{h^2 / 2} = 2$
+
+Dann gilt $k_x \approx 2 - 1 = 1$, fuer $\|x\| \ll 1$. D.h. $f(x)$ ist fuer den gegebenen Bereich gut Konditioniert!
+
+b) 
+
+\begin{align*}
+F(x) &= (1 \circleddash \widetilde{\cos}(x)) \oslash x \\
+     &= \frac{(1 - \cos(x)(1 + \epsilon_1))}{x}(1 + \epsilon_2)(1 + \epsilon_3) \\
+     &\dot= \biggl(\frac{1-\cos(x)}{x} - \frac{\cos(x)\epsilon_1}{x}\biggr)(1 + \epsilon_2 + \epsilon_3) \\
+     &\dot= \frac{1-\cos(x)}{x} + \frac{1-\cos(x)}{x}(\epsilon_2 + \epsilon_3) - \frac{\cos(x)\epsilon_1}{x} \\
+\Rightarrow
+\frac{|f(x) - F(x)|}{f(x)} \, &\dot{=} \, \epsilon_2 + \epsilon_3 - \frac{\cos(x)\epsilon_1}{1 - \cos(x)}
+\end{align*}
+
+Fuer $|x| \ll 1$ gilt $\cos(x) \approx 1$. Somit geht der Ausdruck $\frac{\cos(x)\epsilon_1}{1 - \cos(x)}$ gegen unendlich und dadurch auch der relative Fehler.
+
+c) Der Kern des Problems ist Ausloeschung im Zaehler. Diese kann durch folgenden Umformung vermieden werden:
+
+\begin{align*}
+f(x) &= \frac{1 - \cos(x)}{x} \\
+     &= \frac{(1 - \cos(x))(1 + \cos(x))}{x(1 + \cos(x))} \\
+     &= \frac{sin^2(x)}{x(1 + \cos(x))}
+\end{align*}
+
+Da $\frac{f(x) - F(x)}{f(x)} = 1 - \frac{F(x)}{f(x)}$ genuegt zu zeigen, dass
+$F(x) / f(x)$ eingeschraenkt bleibt. Wir fuehren die Rundungsfehleranalyse wie folgend vor:
+
+\begin{align*}
+F(x) &= \frac{\widetilde{\sin}(x) \odot \widetilde{\sin}(x)}{x \odot (1 \oplus \widetilde{\cos}(x))} \\
+     &= \frac{\sin^2(x)}{x \cdot (1 + \cos(x)(1 + \epsilon_4))}\frac{(1 + \epsilon_1)(1 + \epsilon_2)(1 + \epsilon_3)}{(1 + \epsilon_5)(1 + \epsilon_6)} \\
+\Rightarrow
+\frac{F(x)}{f(x)} \, &\dot= \, \frac{1 + \cos(x)}{1 + \cos(x)(1 + \epsilon_4)} (1 + \epsilon)
+\end{align*}
+
+Es ist leicht zu sehen, dass der Ausdruck oben nicht beliebig gross sein kann fuer $\cos(x) \approx 1$. Somit ist der relative Fehler eingeschraenkt.
