@@ -23,7 +23,6 @@ void flussMatrix( hdnum::DenseMatrix<NumberType> &A )
   // Rohleitungsgleichungssystems
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++ ) {
-      A[i][j] = 0;
     }
   }
 }
@@ -42,7 +41,13 @@ NumberType frobeniusNorm(const hdnum::DenseMatrix<NumberType> &A)
   NumberType result=0.0;
 
   // TODO Implementieren Sie hier die Frobeniusnorm
-
+  NumberType Summe = 0;
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++ ) {
+    Summe += A[i][j];
+    }
+  }
+  result = sqrt(Summe);
   return result;
 }
 
