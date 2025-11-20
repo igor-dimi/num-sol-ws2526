@@ -15,7 +15,7 @@ SRC_DIR     := src/ub$(NR)
 WEEK_SHARE  := $(SHARE_ROOT)/ub$(NR)
 
 # file extensions to include from src/
-SRC_EXTS    := cpp h hpp hh hxx dat png jpg
+SRC_EXTS    := cpp h hpp hh hxx dat png jpg cc
 
 # -------- default target --------
 .PHONY: all
