@@ -44,7 +44,7 @@ NumberType frobeniusNorm(const hdnum::DenseMatrix<NumberType> &A)
   NumberType Summe = 0;
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++ ) {
-    Summe += A[i][j];
+    Summe += A[i][j]**2;
     }
   }
   result = sqrt(Summe);
