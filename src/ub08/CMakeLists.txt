@@ -14,4 +14,4 @@ function(add_ub_example name)
 endfunction()
 
 # List ub1 binaries here:
-# add_ub_example(ub1_task1)
+add_ub_example(prog_iterative_solvers)
